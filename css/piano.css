@@ -1,66 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+/*  Preset CSS  */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  list-style: none;
 }
-
+html {
+  font-size: 10pt;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
 body {
-    background-color: #2a2b2a;
+  margin: 0;
+  background-color: #2a2b2a;
 }
 
-.piano-title {
-    font-family: 'Italianno', cursive;
-    margin: 120px 0 50px;
-    font-weight: 200;
-    font-size: 5em;
-    color: #fff;
-    text-align: center;
+/*    Piano   */
+
+.piano-wrapper {
+  width: 100%;
+  height: 500px;
+  margin-top: 200px;
 }
 
-#piano-area {
-    width: 100%;
-    height: auto;
+.piano-box {
+  margin: 0 auto;
+  max-width: 530px;
+  position: relative;
 }
 
-.piano-body {
-    width: 500px;
-    height: 220px;
-    margin: 0 auto;
-    border-radius: 8px;
-    padding: 0 10px;
+.white-keys{
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.flex {
-    display: flex;
-}
-.white-keys {
-    width: 100%;
-    height: 100%;
-}
 .white-keys .key {
-    background-color: #fff;
-    margin: 2px;
-    border-radius: 3px;
-    flex: 1;
+  flex: 1;
+  background-color: #fff;
+  height: 250px;
+  margin: 1.5px;
+  border-radius: 3px;
+}
+.black-keys{
+  margin: -251px auto;
+  display: flex;
+}
+
+.black-keys .key {
+  flex: 1;
+  background-color: #2a2b2a;
+  height: 150px;
+  max-width: 55px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  box-shadow: inset 0 -20px 2px #1f1f1f;
+}
+
+.black-keys .key:nth-child(1) {
+  margin: 0px 21px 0 9px;
+}
+
+.black-keys .key:nth-child(2) {
+  margin: 0px 96px 0 0;
+}
+
+.black-keys .key:nth-child(3){
+  margin: 0px 21px 0 0;
+}
+
+.black-keys .key:nth-child(4){
+  margin: 0 21px 0 0;
 }
 
 .white-keys .key:active {
-    box-shadow: inset 0 0 10px #000000;
+  /*box-shadow: inset 0 0 10px #000;*/
+  box-shadow: inset 0 -1px 9px -2px #1f1f1f
 }
 
-
-
-
-.black-key {
-    width: 50px;
-    height: 135px;
-    position: absolute;
-    background-color: #2a2b2a;
-    margin: 0 0 0 43px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-    z-index: 99;
+.black-keys .key:active {
+  box-shadow: inset 0 -12px 2px -2px #1f1f1f;
 }
-
 
 
