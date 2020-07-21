@@ -5,15 +5,13 @@ const playNote = function(event) {
 
     const key = document.querySelector(`.key[data-key="${audioDataKey}"]`);
 
-    const isKeyExists = key;
-
-    if (!isKeyExists) {
+    if (!key) {
         console.log("Not Exists.");
     }
     
     const audio = document.querySelector(`audio[data-key="${audioDataKey}"]`);
     audio.currentTime = 0;
-    audio.play();
+    audio.play()
 };
 
 const getDataKey = function(event) {
