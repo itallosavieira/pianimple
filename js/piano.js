@@ -1,19 +1,5 @@
 const keys = document.querySelectorAll(".key");
 
-const playNote = function(event) {
-    let audioDataKey = getDataKey(event);
-
-    const key = document.querySelector(`.key[data-key="${audioDataKey}"]`);
-
-    if (!key) {
-        console.log("Not Exists.");
-    }
-    
-    const audio = document.querySelector(`audio[data-key="${audioDataKey}"]`);
-    audio.currentTime = 0;
-    audio.play()
-};
-
 const getDataKey = function(event) {
     let dataKey;
 
@@ -26,8 +12,23 @@ const getDataKey = function(event) {
     return dataKey;
 };
 
-keys.forEach( function(key){
-    key.addEventListener("click", playNote);
-});
+const playNote = function(event) {
+    const key = document.querySelector(`.key[data-key="${getDataKey(event)}"]`);
+
+    if (!key) {
+        console.log("Not Exists.");
+    }
+    
+    const audio = document.querySelector(`audio[data-key="${getDataKey(event)}"]`);
+    audio.currentTime = 0;
+    audio.play()
+};
+
+
+
+for (key of keys) {
+    key.addEventListener("mousedown", playNote);
+}
 
 window.addEventListener("keydown", playNote);
+
